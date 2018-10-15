@@ -24,4 +24,15 @@ print('\n', a[1,1])
 a = np.arange(1, 61).reshape(6, 10)
 print('\n',a)
 print('\n',a[2:4, 3:6])
+##############################################################
+a = np.random.randint(10, size=(3,4,5))
+print(a)
+print(a.size)
 
+###################################
+a = np.zeros(10, dtype=int)
+print(a)
+
+#############################
+a = np.arange(1,10).reshape(3,3)
+print(a)
