@@ -115,9 +115,27 @@ greeting('Bob')
 greeting('Taylor', 18)
 
 
+# Slowing down code
+
+def slow_down(func):
+
+    @functools.wraps(func)
+    def wraper(*args, **kwargs):
+        time.sleep(1)
+        return func(*args, **kwargs)
+    return wraper
 
 
+@slow_down
+def countdown(from_num):
+    if from_num < 1:
+        print('Liftoff!')
+    else:
+        print(from_num)
+        countdown(from_num - 1)
 
+
+countdown(10)
 
 
 
