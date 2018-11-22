@@ -138,7 +138,19 @@ def countdown(from_num):
 countdown(10)
 
 
+# Closures
 
+def make_multiplier_of(n):
+
+    def multiply(x):
+        return x * n
+
+    return multiply
+
+
+times_3 = make_multiplier_of(3)
+
+print(f'\n {times_3(5)}')
 
 
 
