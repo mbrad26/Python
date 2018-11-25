@@ -118,10 +118,23 @@ a = [next(fib) for _ in range(100)]
 print(a)
 
 
+#########################################################
+
+def outer(msg):
+    def inner(new_msg):
+        print(msg, '\n', new_msg)
+    return inner
 
 
+msg = 'Hello World!'
+new_msg = 'Hello from my little closure.'
 
+new_func = outer(msg)
 
+print(outer)
+
+print(new_func)
+print(new_func(new_msg))
 
 
 
