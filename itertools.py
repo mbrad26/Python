@@ -136,10 +136,22 @@ print(outer)
 print(new_func)
 print(new_func(new_msg))
 
+#############################################################
 
 
+def my_decorator(func):
+    def wraper(*args, **kwargs):
+        func(*args, **kwargs)
+        return func(*args, **kwargs)
+    return wraper
 
 
+@my_decorator
+def say_hi(name):
+    print(f'Hi {name}')
+
+
+say_hi('World')
 
 
 
