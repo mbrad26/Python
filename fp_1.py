@@ -63,6 +63,12 @@ print(repr(v1))
 print(abs(v2))
 
 
+#########################################################
+person = {'name': 'Eric', 'age': 74, 'married': 'Mary'}
+print("Hello, {name}. You are {age} and married to {married}.".format(**person))
+
+
+
 
 
 
