@@ -1,5 +1,8 @@
-import array
+from array import array
 from collections import namedtuple
+from random import random
+from collections import deque
+
 
 symbols = '£$"&^%*()_+'
 
@@ -31,7 +34,7 @@ codes = (ord(char) for char in symbols)
 for x in codes:
     print(x)
 
-print(array.array('I', codes))
+print(array('I', codes))
 
 #####################################################################
 
@@ -61,16 +64,64 @@ delhi = City._make(delhi_data)
 delhi._asdict()
 print(delhi._asdict())
 
+########################################################################
+
+board = [['_'] * 3 for i in range(3)]
+print(board)
+board[1][2] = 'X'
+print(board)
 
 
+weird_board = [['_'] * 3] * 3
+print(weird_board)
+weird_board[1][2] = 'X'
+print(weird_board)
 
 
+board1 = []
+row = ['_']
+
+for i in range(3):
+    board1.append(row)
+print(board)
+# board1[1][2] = 'X'
+# print(board1)
+###################################################
+
+alist = [1, 2, 3]
+
+alist += [3]
+print(alist)
+print(id(alist))
+
+atuple = 1, 2, 3,
+
+print(atuple)
+print(id(atuple))
+
+atuple += 5,
+print(atuple)
+print(id(atuple))
 
 
+########################################################
 
+floats = array('d', (random() for i in range(10**7)))
 
+print('Double_precision float: ', floats[192828])
 
+fp = open('floats.bin', 'wb')
+floats.tofile(fp)
+fp.close()
 
+floats_2 = array('d')
+fp = open('floats.bin', 'rb')
+floats_2.fromfile(fp, 10**7)
+fp.close()
+
+print(floats[-1])
+
+################################################################
 
 
 
