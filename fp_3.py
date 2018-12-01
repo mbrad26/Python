@@ -1,4 +1,6 @@
 from collections import defaultdict
+from collections import Counter
+from collections import UserDict
 
 d = {'a': 3, 'c': 4, 'g': 9, 'y': 3}
 
@@ -30,3 +32,61 @@ for k in s:
 print(dd.items())
 
 #######################################################################
+
+s = 'abracadabrajdudsb'
+
+ct = Counter(s)
+
+print(ct)
+
+ct.update('oiwpqdncncpjcq qjoqqwojd')
+
+print(ct)
+
+###########################################################################
+
+class str_key(UserDict):
+
+    def __missing__(self, key):
+        if isinstance(key, str):
+            raise KeyError(key)
+        return self[str(key)]
+
+    def __contains__(self, key):
+        return key in self.data
+
+    def __setitem__(self, key, item):
+        self.data[str(key)] = item
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
