@@ -1,6 +1,7 @@
 from collections import defaultdict
 from collections import Counter
 from collections import UserDict
+from types import MappingProxyType
 
 d = {'a': 3, 'c': 4, 'g': 9, 'y': 3}
 
@@ -58,14 +59,21 @@ class str_key(UserDict):
     def __setitem__(self, key, item):
         self.data[str(key)] = item
 
+############################################################################
 
 
+d = {'A': 2}
 
+d_proxy = MappingProxyType(d)
+print(d_proxy)
+print(d_proxy['A'])
 
+# d_proxy['B'] = 3
 
+d['B'] = 3
+print(d_proxy)
 
-
-
+##########################################################################
 
 
 
