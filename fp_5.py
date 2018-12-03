@@ -62,7 +62,7 @@ print(alist)
 
 triple = partial(operator.mul, 5)
 
-print(triple)
+print(triple.func)
 print(triple(3))
 
 print(list(map(triple, range(1, 15))))
