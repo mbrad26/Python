@@ -1,4 +1,5 @@
 import reprlib
+import collections
 from array import array
 
 
@@ -59,3 +60,74 @@ vector1 = Vector3d([4, 3])
 
 # print(hash(vector))
 print(vector == vector1)
+
+###############################################################################
+
+
+class DopperDict(dict):
+
+    def __setitem__(self, key, value):
+        super().__setitem__(key, [value] * 2)
+
+
+dd = DopperDict(one=1)
+print(dd)
+
+dd['two'] = 2
+print(dd)
+
+dd.update(three=3)
+print(dd)
+
+###########################################################################
+
+
+class DoppelDict2(collections.UserDict):
+
+    def __setitem__(self, key, value):
+        super().__setitem__(key, [value] * 2)
+
+
+dd2 = DoppelDict2(one=1)
+print(dd2)
+
+dd2['two'] = 2
+print(dd2)
+
+dd2.update(three=3)
+print(dd2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
