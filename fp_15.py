@@ -12,3 +12,5 @@ def looking_glass():
     sys.stdout.write = reverse_write
     yield 'JABBERWOCKY'
     sys.stdout.write = original
+
+
