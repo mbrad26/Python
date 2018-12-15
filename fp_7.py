@@ -1,3 +1,7 @@
+from collections import defaultdict
+from collections import Counter
+
+
 class Average:
 
     def __init__(self):
@@ -36,4 +40,64 @@ print(favg(5))
 print(favg(9))
 
 ###############################################################
+
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+
+d = defaultdict(list)
+
+for k, v in s:
+    d[k].append(v)
+
+print(type(d))
+print(d)
+
+
+s = 'mississippi'
+
+d = defaultdict(int)
+for k in s:
+    d[k] += 1
+
+print(d.items())
+
+
+#################################################################
+
+s = 'abracadabra'
+
+ct = Counter(s)
+
+print(ct.items())
+
+ct.update('aaaabbbaaa')
+
+print(ct)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
