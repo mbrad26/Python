@@ -91,9 +91,9 @@ class Bingo:
         # pass
         return iter(self._items)
 
-    def __getitem__(self, item):
-        pass
-        # return self._items
+    # def __getitem__(self, item):
+    #     # pass
+    #     return self._items[item]
 
     def pick(self):
         try:
@@ -118,8 +118,16 @@ print(alist)
 #############################################################################
 
 
+def d_9():
+    return random.randint(1,10)
 
 
+it = iter(d_9, 5)
+
+for x in it:
+    print(x)
+else:
+    print('Returned: ', 5)
 
 
 
