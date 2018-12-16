@@ -1,5 +1,7 @@
+import random
 from collections import defaultdict
 from collections import Counter
+from operator import itemgetter
 
 
 class Average:
@@ -51,6 +53,7 @@ for k, v in s:
 
 print(type(d))
 print(d)
+print('Itemgetter: ', sorted(s, key=itemgetter(0)))
 
 
 s = 'mississippi'
@@ -75,17 +78,44 @@ ct.update('aaaabbbaaa')
 print(ct)
 
 
+##############################################################
 
 
+class Bingo:
+
+    def __init__(self, items):
+        self._items = list(items)
+        random.shuffle(self._items)
+
+    def __iter__(self):
+        # pass
+        return iter(self._items)
+
+    def __getitem__(self, item):
+        pass
+        # return self._items
+
+    def pick(self):
+        try:
+            self._items.pop()
+        except IndexError:
+            raise LookupError
+
+    def __call__(self):
+        return self.pick()
 
 
+bingo = Bingo(range(20))
 
+print(bingo)
 
+alist = []
+for k in bingo:
+    alist.append(k)
 
+print(alist)
 
-
-
-
+#############################################################################
 
 
 
