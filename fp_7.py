@@ -1,4 +1,6 @@
 import random
+import reprlib
+import array
 from collections import defaultdict
 from collections import Counter
 from operator import itemgetter
@@ -128,6 +130,67 @@ for x in it:
     print(x)
 else:
     print('Returned: ', 5)
+
+##########################################################################
+
+
+class Vector2d:
+
+    def __init__(self, x=0, y=0):
+        self.x = float(x)
+        self.y = float(y)
+
+    def __repr__(self):
+        return 'Vector2d({})'.format(reprlib.repr(self.x, self.y))
+
+    def __iter__(self):
+        return iter(self)
+
+    def __eq__(self, other):
+        return tuple(self) == tuple(other)
+
+    def __hash__(self):
+        return hash(self.x) ^ hash(self.y)
+
+
+vector_1 = Vector2d(3, 11)
+vector_2 = Vector2d(4, 3)
+
+
+print(hash(vector_1))
+print(hash(vector_2))
+
+####################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
