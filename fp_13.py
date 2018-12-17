@@ -1,5 +1,6 @@
 import math
 import itertools
+import collections
 
 
 class Vector:
@@ -34,12 +35,52 @@ class DoppleDict(dict):
 dop = DoppleDict(one=1)
 
 print(dop)
-
 dop['two'] = 2
-
 print(dop)
-
 dop.update(three=3)
+print(dop)
+
+############################################################################
+
+
+class DoppleUserDict(collections.UserDict):
+
+    def __setitem__(self, key, value):
+        super().__setitem__(key, [value] * 2)
+
+
+dop = DoppleUserDict(one=1)
 
 print(dop)
+dop['two'] = 2
+print(dop)
+dop.update(three=3)
+print(dop)
+
+############################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
