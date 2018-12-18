@@ -1,5 +1,6 @@
 import reprlib
 import collections
+import numbers
 from array import array
 
 
@@ -98,15 +99,37 @@ dd2.update(three=3)
 print(dd2)
 
 
+#########################################################################
+
+class Vector2d:
+
+    typecode = 'd'
+
+    def __init__(self, *components):
+        self._components = array(self.typecode, components)
+
+    def __iter__(self):
+        return iter(self._components)
+
+    def __len__(self):
+        return len(self._components)
+
+    def __getitem__(self, item):
+        cls = type(self)
+        if isinstance(item, slice):
+            return cls(self._components[item])
+        if isinstance(item, numbers.Integral):
+            return self._components[item]
+        else:
+            msg = '{cls.__name__} indices must be integers'
+            raise TypeError(msg.format(cls=cls))
 
 
+vector = Vector2d(3, 4, 2, 7)
 
-
-
-
-
-
-
+print(vector)
+print(len(vector))
+print(vector[:1])
 
 
 
