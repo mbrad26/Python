@@ -129,8 +129,8 @@ vector = Vector2d(3, 4, 2, 7)
 
 print(vector)
 print(len(vector))
-print(vector[:1])
-
+print(vector[2])
+print(Vector2d.__mro__)
 
 
 
