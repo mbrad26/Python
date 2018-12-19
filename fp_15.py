@@ -1,5 +1,8 @@
+import re
+import reprlib
 from contextlib import contextmanager
 from functools import lru_cache
+
 
 @contextmanager
 def looking_glass():
@@ -63,12 +66,20 @@ def fib(n):
 print(fib(250))
 
 
+#########################################
+
+text = 'kshd ckacajhc aljhclah lkchlac ahcalh alkjskljkja lskjja;kdjak; djdiajd ja;ja;jdj aslj;as5ajab s jlanca ca ' \
+       'kjsac45as'
+
+RE_WORDS = re.compile('\w+')
+
+words = RE_WORDS.findall(text)
+
+print(words)
+print(reprlib.repr(text))
 
 
-
-
-
-
+##############################################
 
 
 
