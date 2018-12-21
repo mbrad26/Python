@@ -2,6 +2,7 @@ import re
 import reprlib
 from contextlib import contextmanager
 from functools import lru_cache
+from collections import defaultdict
 
 
 @contextmanager
@@ -80,6 +81,17 @@ print(reprlib.repr(text))
 
 
 ##############################################
+
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+
+d = defaultdict(list)
+print(d)
+for k, v in s:
+    d[k] = v
+
+print(d)
+
 
 
 
