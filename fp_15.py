@@ -107,7 +107,7 @@ metro_data = [
 
 print(sorted(metro_data, key=operator.itemgetter(1)))
 
-
+print([[]] * 3)
 
 
 
